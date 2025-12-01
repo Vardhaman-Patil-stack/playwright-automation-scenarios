@@ -69,6 +69,7 @@ export class ProductPage {
      * @returns Promise<ShoppingCartPage> - Returns ShoppingCartPage instance
      */
     async clickViewCart(): Promise<ShoppingCartPage> {
+        await this.lnkViewCart.waitFor({ state: "visible" });
         await this.lnkViewCart.click();
         return new ShoppingCartPage(this.page);
     }
